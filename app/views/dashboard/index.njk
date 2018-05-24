@@ -6,7 +6,7 @@
     <section id="main">
       <div class="container">
         <header>
-          <h2>Meus projetos (x)</h2>
+          <h2>Meus projetos ({{ projects.length }})</h2>
           <div class="addon">
             <form action="" method="post">
               <input type="text" name="name" placeholder="Novo projeto">
@@ -19,10 +19,9 @@
 
         <section id="content">
           <div class="project-list">
-            <a href="project.html">Exemplo de projeto</a>
-            <a href="project.html">Outro projeto</a>
-            <a href="project.html">Mais um projeto</a>
-            <a href="project.html">Projeto exemplo</a>
+            {% for project in projects %}
+              <a href="project.html">{{ project.title }}</a>
+            {% endfor %}
           </div>
         </section>
       </div>
