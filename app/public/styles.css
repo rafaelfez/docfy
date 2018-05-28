@@ -321,6 +321,7 @@ input:focus, textarea:focus {
 
 .wrapper section#main #content form textarea {
   min-height: 300px;
+  max-height: 500px;
   border-radius: 3px;
   border: 0;
   padding: 20px;

@@ -22,6 +22,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session(sessionConfig));
 app.use(flash());
 
+app.get('/p', (req, res) => {
+  res.render('sections/new');
+});
+
 app.use('/', routes);
 
 app.listen(3000);
