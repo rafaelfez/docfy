@@ -1,0 +1,15 @@
+<section id="content">
+  <nav>
+    <div class="sessions">
+      {% for section in sections %}
+        <a
+          href="/app/projects/{{ activeProject }}/sections/{{ section.id }}"
+          class="{% if section.id === currentSection.id %}active{% endif %}"
+        >
+          {{ section.title }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <a href="/app/projects/{{ activeProject }}/sections/new" class="btn">Nova seção</a>
+  </nav>

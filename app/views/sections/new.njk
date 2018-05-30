@@ -12,18 +12,7 @@
           </div>
         </header>
 
-        <section id="content">
-          <nav>
-            <div class="sessions">
-              {% for section in sections %}
-                <a href="/app/projects/{{ activeProject }}/sections/{{ section.id }}">
-                  {{ section.title }}
-                </a>
-              {% endfor %}
-            </div>
-
-            <a href="" class="btn">Nova seção</a>
-          </nav>
+        {% include 'partials/sections.njk' %}
 
           <article>
             <form action="/app/projects/{{ project.id }}/sections/create" method="POST">

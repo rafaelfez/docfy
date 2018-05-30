@@ -1,5 +1,32 @@
 {% extends 'layouts/default.njk' %}
 
 {% block body %}
+  <div class="wrapper">
+    {% include 'partials/nav.njk' %}
 
+    <section id="main">
+      <div class="container">
+        <header>
+          <h2>{{ project.title }}</h2>
+          <div class="addon">
+            <form id="excluirProject" action="/app/projects/{{ activeProject }}?_method=DELETE" method="POST">
+              <a href="#" onclick='this.parentNode.submit();' class="btn btn-danger">Excluir projeto</a>
+            </form>
+          </div>
+        </header>
+
+        {% include 'partials/sections.njk' %}
+
+        <article>
+          <div class="project-header">
+            <h1>{{ currentSection.title }}</h1>
+            <form id="excluirSection"action="/app/projects/{{ activeProject }}/sections/{{ currentSection.id }}?_method=DELETE" method="POST">
+              <a href="#" onclick='this.parentNode.submit();'>Remover seção</a>
+            </form>
+          </div>
+          <p>{{ currentSection.formattedContent | safe }}</p>
+        </article>
+      </div>
+    </section>
+  </div>
 {% endblock %}
